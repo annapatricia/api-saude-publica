@@ -69,3 +69,7 @@ start: uvicorn main:app --host 0.0.0.0 --port 10000
 Pode configurar variáveis de ambiente, quantidade de CPUs, memória, etc.
 
 Resumo: é o manual que o Render lê para saber como rodar sua API.
+
+########################################################################################
+
+https://api-saude-publica.onrender.com/docs#/
