@@ -1,0 +1,71 @@
+main.py
+
+O que é:
+
+É o coração da sua API.
+
+Contém todo o código em Python que define os endpoints, o que a API faz e como responde às requisições.
+
+O que ele faz no seu projeto:
+
+Cria a API usando FastAPI.
+
+Define os endpoints:
+
+/ → mensagem de boas-vindas
+
+/doencas → listar todas as doenças (GET)
+
+/doencas/{nome_doenca} → buscar uma doença pelo nome (GET)
+
+/doencas → cadastrar uma nova doença (POST)
+
+Armazena a lista de doenças na memória (não persistente).
+
+Resumo: é o código principal que “roda a API”.
+
+#######################################################
+
+2️⃣ requirements.txt
+
+O que é:
+
+Arquivo de texto que lista todas as bibliotecas Python necessárias para rodar o projeto.
+
+O Render (ou qualquer outro serviço) lê esse arquivo e instala automaticamente todas as dependências.
+
+O que ele faz no seu projeto:
+
+Lista bibliotecas como:
+
+fastapi
+uvicorn
+pydantic
+
+
+Sem ele, o Render não sabe quais pacotes instalar, e a API não funcionaria.
+
+Resumo: é como uma lista de compras de bibliotecas que a API precisa para rodar.
+
+##################################################################
+
+ender.yaml
+
+O que é:
+
+Arquivo de configuração específico do Render.
+
+Diz para o Render como rodar seu serviço, qual comando usar e outras opções.
+
+O que ele faz no seu projeto:
+
+Informa que o serviço é um Web Service Python 3.
+
+Define o comando que inicia a API, por exemplo:
+
+start: uvicorn main:app --host 0.0.0.0 --port 10000
+
+
+Pode configurar variáveis de ambiente, quantidade de CPUs, memória, etc.
+
+Resumo: é o manual que o Render lê para saber como rodar sua API.
