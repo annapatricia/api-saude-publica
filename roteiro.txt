@@ -1,0 +1,125 @@
+🟢 PASSO 1 — Criar o repositório no GitHub
+Entre em github.com
+Clique em New (ou New repository)
+Preencha:
+Repository name:
+api-saude-publica
+Description (opcional):
+API para projeto de saúde pública
+Marque: Public
+❌ NÃO marque README agora
+Clique em Create repository
+👉 Você verá uma página vazia do repositório.
+
+################################################
+
+🟢 PASSO 2 — Criar o arquivo main.py
+No repositório, clique em Add file → Create new file
+Em File name, digite:
+main.py
+Cole este código:
+from fastapi import FastAPI
+app = FastAPI(title="API Saúde Pública")
+@app.get("/")
+def home():
+    return {"mensagem": "Sistema de regulação online"}
+
+Role para baixo
+Em Commit message, escreva:
+adiciona main.py com FastAPI
+
+Clique em Commit new file
+
+####################################################
+
+🟢 PASSO 3 — Criar o arquivo requirements.txt
+Clique novamente em Add file → Create new file
+Nome do arquivo:
+requirements.txt
+
+Conteúdo:
+fastapi
+uvicorn
+
+Commit message:
+adiciona requirements
+Commit new file
+
+#######################################################
+
+🟢 PASSO 4 — Criar o arquivo render.yaml
+Add file → Create new file
+
+Nome:
+
+render.yaml
+
+Conteúdo:
+
+services:
+  - type: web
+    name: api-saude-publica
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port 10000
+
+
+Commit message:
+
+adiciona configuracao do render
+
+
+Commit new file
+
+############################################################
+
+✅ CHECKPOINT — Está tudo certo se você vê isso:
+
+No repositório:
+
+api-saude-publica
+├── main.py
+├── requirements.txt
+└── render.yaml
+
+
+Se estiver assim, você fez tudo certo.
+
+##########################################################
+
+🟢 PASSO 5 — Conectar o GitHub ao Render
+
+Agora vamos colocar online.
+Acesse https://render.com
+Clique em Sign up / Log in
+Entre com GitHub
+Autorize o Render (uma vez só)
+
+#########################################################
+
+🟢 PASSO 6 — Criar o serviço no Render
+
+No Render, clique em New +
+
+Escolha Web Service
+Selecione o repositório:
+
+api-saude-publica
+
+
+Configure:
+Name: api-saude-publica
+Runtime: Python
+Build Command:
+
+pip install -r requirements.txt
+
+Start Command:
+uvicorn main:app --host 0.0.0.0 --port 10000
+Clique em Create Web Service
+
+##########################################################
+
+https://api-saude-publica.onrender.com/docs
+
+
